@@ -240,6 +240,18 @@ body {
     .text-container{
         width: 90%;
     }
+    .sp-scroll{
+        width: 4em;
+    }
+    .sp-scroll .sp-item{
+        writing-mode: vertical-lr;
+        transform: scale(-1, -1);
+        display: flex;
+        align-items: center;
+    }
+    .sp-scroll .sp-item p{
+        padding: 1em;
+    }
 }
 
 
