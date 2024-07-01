@@ -3,11 +3,11 @@
 function open_menu()
 {
     var side_menu = document.getElementById("sidemenu");
-    side_menu.style.right = "0";
+    side_menu.classList.add('aside-open');
 }
 
 function close_menu()
 {
     var side_menu = document.getElementById("sidemenu");
-    side_menu.style.right = "-16rem";
+    side_menu.classList.remove('aside-open');
 }

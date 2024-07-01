@@ -1,0 +1,42 @@
+
+.contact{
+    padding-top: 40px;
+}
+
+.contact-email{
+    font-size: 18px;
+    color: white;
+}
+.contact-email p{
+    margin-top: 1em;
+    margin-bottom: 0;
+}
+
+.social-sites ul{
+    list-style: none;
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    padding: 0;
+    margin: 0;
+}
+.social-sites li{
+    margin: 1rem 1rem 1rem 0rem;
+}
+.social-sites a{
+    text-decoration: none;
+    color: #fff;
+}
+.social-sites a i{
+    font-size: 1.5rem;
+    transition: color 0.5s ease;
+}
+.social-sites ul li:nth-child(1) a:hover{
+    color: #0a66c2;
+}
+.social-sites ul li:nth-child(2) a:hover{
+    color: #333;
+}
+.social-sites ul li:nth-child(3) a:hover{
+    color: black;
+}

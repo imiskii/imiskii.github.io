@@ -1,0 +1,36 @@
+
+.col-flexbox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.row-flexbox{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.paragraph{
+    margin-top: 1em;
+}
+.paragraph b{
+    color: #ffd400;
+}
+.paragraph p a{
+    color: #ecd561;
+}
+.paragraph ul{
+    list-style: circle;
+}
+.paragraph li{
+    margin-bottom: 0.4em;
+}
+.paragraph em{
+    color: #ecd561;
+}
+
+ul{
+    list-style: none;
+    text-decoration: none;
+}

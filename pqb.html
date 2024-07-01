@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PQB</title>
+    <link rel="icon" type="image/png" href="images/icons/MyLogo3.png">
+    <link rel="stylesheet" href="css/project_site.css">
+    <script src="https://kit.fontawesome.com/2ff75daa4b.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+</head>
+<body>
+    <div class="main-container">
+        <div class="back-btns">
+            <a href="index.html"><i class="fa-solid fa-house"></i>Home</a>
+        </div>
+        <div class="content">
+            <!-- START Main Label -->
+            <div class="content-label">
+                <h1>Blockchain resistant to quantum attacks</h1>
+            </div>
+            <!-- END Main Label -->
+            <!-- START Project Info -->
+            <div class="project-info">
+                <h2>Project info</h2>
+                <div class="project-links">
+                    <a href="https://github.com/imiskii/PQBlockchain" class="link"><i class="fa-brands fa-github"></i>GitHub PQBlockchain</a>
+                </div>
+                <div class="motivation">
+                    <h3>Motivation</h3>
+                    <div class="paragraph">
+                        <p>
+                            This project is my bachelor thesis, and you can find the full text and source files on my GitHub. 
+                            The aim was to create a post-quantum blockchain. I analyzed how quantum computers threaten current blockchains, 
+                            identified suitable post-quantum cryptographic algorithms, implemented the blockchain, and studied the 
+                            impact of these algorithms on performance.<br><br>
+                            I learned a lot about blockchains and cryptography through this project. I'm happy with the results, 
+                            and the work earned an A grade. Here is a shorter version of the thesis with introduction, analysis, and results.
+                        </p>
+                    </div>
+                </div>
+                <div class="abstract">
+                    <h3>Abstract</h3>
+                    <div class="paragraph">
+                        <p>
+                            The development of quantum computers presents new opportunities but also introduces a threat by compromising 
+                            currently used cryptographic algorithms. This threat significantly impacts blockchain technology, which relies 
+                            on various cryptographic principles. The objective is to design and implement a blockchain that incorporates 
+                            new post-quantum cryptographic algorithms resistant to attacks performed by quantum computers. The main part 
+                            of the solution involves analyzing blockchain components vulnerable to quantum attacks, selecting appropriate 
+                            post-quantum algorithms, and subsequently implementing them within the blockchain. The result of this work is 
+                            an overview of blockchain vulnerabilities and their solutions in the post-quantum era. Additionally, the 
+                            implemented solution compares the performance of multiple post-quantum and currently used algorithms. 
+                            The results show that post-quantum cryptography can have a significant impact on blockchain performance. However, 
+                            post-quantum blockchains will still be usable, and they will withstand the era of quantum computers.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- END Project Info -->
+            <!-- Start Main Content -->
+            <div class="content-text">
+                <h2>1. Quantum threat</h2>
+                <div class="paragraph">
+                    <p>
+                        The risks are mainly associated with threats to the currently used cryptography. 
+                        A specific concern arises from the capability of quantum computers to solve
+                        certain mathematical problems much more efficiently than classical computers.
+                        Many existing encryption algorithms rely on these mathematical problems’ complexity, 
+                        which makes them vulnerable to quantum threats [3].
+                    </p>
+                </div>
+                <div class="paragraph">
+                    <p>
+                        There are already algorithms designed specifically for quantum computers
+                        that pose a direct threat. Notably, Shor’s algorithms [10] address the efficient
+                        factorization of large numbers and the Discrete Logarithm problem. These problems 
+                        exhibit exponential complexity on classical computers but only linear complexity 
+                        on quantum computers. This poses a direct risk to current asymmetric
+                        cryptography. Specifically for algorithms RSA and DSA, as well as elliptic curves
+                        algorithms Ed25519 or ECDSA.
+                    </p>
+                </div>
+                <div class="paragraph">
+                    <p>
+                        Additionally, Grover’s algorithm [6], a quantum search algorithm, can search
+                        an unsorted database with <span class="math inline">\(O(n^{1/2})\)</span> complexity [2]. This algorithm can be used
+                        to efficiently search for collisions in currently used hash functions, which pose a
+                        threat to applications that require non-collision hash functions.
+                    </p>
+                </div>
+                <div class="paragraph">
+                    <p>
+                        From this point of view, the current situation is somewhat unusual. We know
+                        how to break current cryptographic algorithms such as RSA –we need to efficiently 
+                        factor large numbers. We know an algorithm that can do this – Shor’s
+                        algorithm. The only thing we still lack is a sufficiently powerful quantum computer.
+                    </p>
+                </div>
+                <h2>2. Post-quantum cryptography</h2>
+                <div class="paragraph">
+                    <p>
+                        The response to the quantum threat lies in quantum-resistant cryptography, often 
+                        referred to as post-quantum (PQ) cryptography. This form of cryptography
+                        is designed to provide robust encryption against the capabilities of both quantum 
+                        and classical computers. Notably, the National Institute of Standards and
+                        Technology (NIST) has taken a significant initiative in this domain, launching a
+                        competition to standardize one or more quantum-resistant algorithms. From this
+                        competition, four algorithms have already been selected for standardization. The
+                        CRYSTALS-Kyber algorithm was chosen for the Key-Encapsulation Mechanism (KEM) 
+                        category, and three algorithms –CRYSTALS-Dilithium, Falcon,
+                        and SPHINCS+ – were selected for the digital signature category. For these algorithms, 
+                        NIST has defined 5 security levels [9]:
+                    </p>
+                    <ol>
+                        <li>corresponds to the difficulty of a brute force attack on AES-128.</li>
+                        <li>corresponds to the difficulty of generic collision search on SHA-256.</li>
+                        <li>corresponds to the difficulty of a brute force attack on AES-192.</li>
+                        <li>corresponds to the difficulty of generic collision search on SHA-384.</li>
+                        <li>corresponds to the difficulty of a brute force attack on AES-256.</li>
+                    </ol>
+                </div>
+                <div class="paragraph">
+                    <p>
+                        Compared to currently used cryptography, PQ cryptography has lower performance 
+                        and there are also large differences in the sizes of keys, ciphertext,
+                        and signatures. Typically, in current cryptography, the size of keys and digital
+                        signatures is in the order of hundreds to thousands of bits, in the case of elliptic
+                        curves cryptography it is even less than a hundred bits. Keys, ciphertext, and
+                        signatures in PQ cryptography are significantly larger (see Table 1).
+                    </p>
+                </div>
+                <div class="paragraph">
+                    <p>
+                        Particularly for blockchain technology, the size of keys and digital signatures
+                        can pose significant challenges. Since they are often stored within a blockchain,
+                        this can cause substantial growth in its overall size.
+                    </p>
+                </div>
+                <h2>3. Post-quantum blockchain</h2>
+                <div class="paragraph">
+                    <p>
+                        The primary objective of this Section is to identify parts of blockchain technology
+                        that may be vulnerable to quantum threats, as explained in Section 3.1, and to
+                        select appropriate PQ algorithms for inclusion in blockchains 3.2.
+                    </p>
+                </div>
+                <div class="content-image">
+                    <table>
+                        <caption>Table 1. Key, signature, and ciphertext sizes (in bytes) of the NIST competition
+                            finalists. [1]</caption>
+                        <thead>
+                            <tr>
+                                <th>Algorithm</th>
+                                <th>Claimed Security</th>
+                                <th>Public key</th>
+                                <th>Private key</th>
+                                <th>Signature/Ciphertext</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td rowspan="3">Dilithium</td>
+                                <td>Level 2</td>
+                                <td>1,312</td>
+                                <td>2,528</td>
+                                <td>2,420</td>
+                            </tr>
+                            <tr>
+                                <td>Level 3</td>
+                                <td>1,952</td>
+                                <td>4,000</td>
+                                <td>3,293</td>
+                            </tr>
+                            <tr>
+                                <td>Level 5</td>
+                                <td>2,592</td>
+                                <td>4,864</td>
+                                <td>4,595</td>
+                            </tr>
+                            <tr>
+                                <td>Falcon-512</td>
+                                <td>Level 1</td>
+                                <td>897</td>
+                                <td>7,553</td>
+                                <td>666</td>
+                            </tr>
+                            <tr>
+                                <td>Falcon-1024</td>
+                                <td>Level 5</td>
+                                <td>1,793</td>
+                                <td>13,953</td>
+                                <td>1,280</td>
+                            </tr>
+                            <tr>
+                                <td>SPHINCS<sup>+</sup>-128s</td>
+                                <td>Level 1</td>
+                                <td>32</td>
+                                <td>64</td>
+                                <td>7,856</td>
+                            </tr>
+                            <tr>
+                                <td>SPHINCS<sup>+</sup>-128f</td>
+                                <td>Level 1</td>
+                                <td>32</td>
+                                <td>64</td>
+                                <td>17,088</td>
+                            </tr>
+                            <tr>
+                                <td>SPHINCS<sup>+</sup>-192s</td>
+                                <td>Level 3</td>
+                                <td>48</td>
+                                <td>96</td>
+                                <td>16,224</td>
+                            </tr>
+                            <tr>
+                                <td>SPHINCS<sup>+</sup>-192f</td>
+                                <td>Level 3</td>
+                                <td>48</td>
+                                <td>96</td>
+                                <td>35,664</td>
+                            </tr>
+                            <tr>
+                                <td>SPHINCS<sup>+</sup>-256s</td>
+                                <td>Level 5</td>
+                                <td>64</td>
+                                <td>128</td>
+                                <td>29,792</td>
+                            </tr>
+                            <tr>
+                                <td>SPHINCS<sup>+</sup>-256f</td>
+                                <td>Level 5</td>
+                                <td>64</td>
+                                <td>128</td>
+                                <td>49,856</td>
+                            </tr>
+                            <tr>
+                                <td>Kyber512</td>
+                                <td>Level 1</td>
+                                <td>800</td>
+                                <td>1,632</td>
+                                <td>768</td>
+                            </tr>
+                            <tr>
+                                <td>Kyber768</td>
+                                <td>Level 3</td>
+                                <td>1,184</td>
+                                <td>2,400</td>
+                                <td>1,088</td>
+                            </tr>
+                            <tr>
+                                <td>Kyber1024</td>
+                                <td>Level 5</td>
+                                <td>1,568</td>
+                                <td>3,168</td>
+                                <td>1,568</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <h3>3.1 Blockchain components affected by quantum threat</h3>
+                <div class="paragraph">
+                    <p>
+                        <b>Block hashes and Merkle trees</b> Each block in a blockchain contains a hash
+                        representing data within that block, as well as the hash of the previous block,
+                        typically calculated using the Merkle tree procedure. As mentioned Grover’s algorithm 
+                        can be employed to search for hash collisions, which may enable the
+                        replacement of a block in the blockchain while maintaining its apparent integrity [4]. 
+                        To mitigate this threat, it is crucial to employ a hash function with
+                        an adequate output length.
+                    </p>
+                </div>
+                <div class="paragraph">
+                    <p>
+                        The quantum resistance/vulnerability of hash functions according to Czech
+                        National Cyber and Information Security Agency(NCISA) can be summarized
+                        as follows: Hash functions with output lengths of 384 bits or more are quantum-resistant, 
+                        while those with key lengths of 256 bits or less are quantum-vulnerable.
+                        National Security Agency (NSA) in the CNSA 2.0 suit only accepts SHA-384
+                        and SHA-512 hash functions [9].
+                    </p>
+                </div>
+                <div class="paragraph">
+                    <p>
+                        <b>Transaction signatures</b> Each transaction in a blockchain must feature a digital 
+                        signature. To ensure PQ resistance signatures have to be created by quantum-
+                        resistant algorithms, which were discussed in Section 2.
+                    </p>
+                </div>
+                <div class="paragraph">
+                    <p>
+                        <b>Transactions confidentiality</b> For blockchains prioritizing data confidentiality, 
+                        attention must be given to communication encryption. The KEM algorithm
+                        Kyber is employed to ensure the secure exchange of a symmetric key. For symmetric 
+                        cryptography is important to use a key with adequate length.
+                    </p>
+                </div>
+                <div class="paragraph">
+                    <p>
+                        The quantum resistance/vulnerability of block and stream ciphers, according
+                        to NCISA, can be summarized as follows: Ciphers with a key length of 256 bits
+                        are quantum-resistant, while those with key lengths of 128 bits and 192 bits are
+                        quantum-vulnerable. NSA in the Commercial National Security Algorithm Suite
+                        2.0 (CNSA 2.0) only accepts AES-256 [9].
+                    </p>
+                </div>
+                <div class="paragraph">
+                    <p>
+                        <b>Consensus mechanism</b> Regarding consensus mechanisms, in the case of the
+                        Proof-of-Work (PoW) consensus mechanism, it is advisable to use a PoW variant
+                        that does not grant quantum computers an advantage over classical ones.
+                    </p>
+                </div>
+                <div class="paragraph">
+                    <p>
+                        Grover’s algorithm can accelerate the generation of hashes, which poses a
+                        challenge for blockchains employing a PoW consensus mechanism or a similar
+                        approach. A user equipped with a quantum computer could gain a significant
+                        advantage, potentially leading to dominance over the blockchain network by
+                        outperforming classical computers [4].
+                    </p>
+                </div>
+                <div class="paragraph">
+                    <p>
+                        A notable alternative is the Lattice-based Consensus mechanism, or Lattice-
+                        based Proof-of-Work (LPoW), which is quantum-safe. LPoW presents a challenging 
+                        puzzle for both classical and quantum computers; this ensures security
+                        while the verification process remains simple as in the case of traditional PoW
+                        consensus mechanisms [5].
+                    </p>
+                </div>
+                <div class="paragraph">
+                    <p>
+                        In the case of Proof-of-Stake (PoS) and other consensus mechanisms that use
+                        the concept of randomness, it is important to choose a reliable random generator.
+                        Theoretically, PQ computers will be able to find the deterministic nature of
+                        the pseudo-random generated values, as long as this process is based on the
+                        phenomenon of classical physics [8]. In PoS, this vulnerability could empower
+                        a malicious actor to manipulate stake height to increase the likelihood of being
+                        more frequently chosen as the final validator. This issue is not restricted to
+                        consensus mechanisms; many cryptographic algorithms rely on pseudo-random
+                        number generators. However, the solution lies in quantum random generators,
+                        which are also a hot topic in the PQ era. The key is to integrate them into
+                        existing solutions and use them instead of current pseudo-random generators as
+                        soon as they are available.
+                    </p>
+                </div>
+                <div class="paragraph">
+                    <p>
+                        Some consensus mechanisms, like PoS, Ouroboros, or XRP consensus mechanism, 
+                        also use digital signatures. As for transactions, it is crucial to use PQ
+                        digital signature algorithms.
+                    </p>
+                </div>
+                <h3>3.2 Post-quantum cryptography for blockchain</h3>
+                <div class="paragraph">
+                    <p>
+                        To create an efficient PQ blockchain, several factors are important [4]:
+                    </p>
+                </div>
+                <div class="paragraph">
+                    <p>
+                        Small encryption key sizes. Devices interacting with the blockchain need to
+                        store private keys and often multiple public keys. Particularly for Internet
+                        of Things (IoT) devices, small key sizes are essential for space-saving and
+                        efficient work with these keys.
+                    </p>
+                </div>
+                <div class="paragraph">
+                    <p>
+                        Small sizes of digital signatures. Since every blockchain transaction requires
+                        a digital signature, the size of these signatures significantly impacts the size
+                        of a block and the entire blockchain.
+                    </p>
+                </div>
+                <div class="paragraph">
+                    <p>
+                        Fast execution. Post-quantum schemes must be optimized for speed to enable
+                        the blockchain to process a maximum number of transactions.
+                    </p>
+                </div>
+                <div class="paragraph">
+                    <p>
+                        Low computational complexity. This ties in with the previous point, but
+                        it is important to note that certain post-quantum schemes may work more
+                        efficiently on specific hardware without necessarily being computationally
+                        simple.
+                    </p>
+                </div>
+                <div class="paragraph">
+                    <p>
+                        Low energy consumption. Ensuring the long-term sustainability of the blockchain 
+                        requires energy-efficient computing processes.
+                    </p>
+                </div>
+                <div class="paragraph">
+                    <p>
+                        However, achieving these ideal properties is challenging in practice, especially
+                        concerning key size, digital signatures, and efficiency. It often involves a balanced
+                        trade-off between security and practicality, or key size and performance [11].
+                    </p>
+                </div>
+                <div class="paragraph">
+                    <p>
+                        <b>Key-Encapsulation Mechanism (KEM)</b> The only standardized algorithm
+                        in the KEM category is algorithm Kyber. There are two additional algorithms
+                        worth mentioning however Kyber emerges as the most favorable choice. The first
+                        is the Hamming Quasi-Cyclic (HQC) KEM algorithm. It shares many similarities 
+                        with Kyber, but Kyber holds a slight advantage across all measurements
+                        (performance, key and signature sizes, and theoretical security). The second algorithm 
+                        is McEliece. It stands out for its compact ciphertexts and longstanding
+                        reliability, but its drawback lies in the size of public keys.
+                    </p>
+                </div>
+                <div class="paragraph">
+                    <p>
+                        <b>Digital signatures</b> In the case of algorithms for digital signatures, the decision 
+                        is no longer as straightforward. In the blockchain, where each transaction
+                        requires a digital signature, the SPHINCS+ algorithm could be impractical due
+                        to excessively large signatures.
+                    </p>
+                </div>
+                <div class="paragraph">
+                    <p>
+                        So, the primary argument arises between the Falcon and Dilithium algorithms. 
+                        Both exhibit comparable properties, with Falcon having slightly smaller
+                        public keys and signatures, while Dilithium has slightly better performance. Both
+                        algorithms are trusted by relevant institutions, with Dilithium being particularly
+                        favored by the NSA. Ultimately, both Falcon and Dilithium are deemed as the
+                        best choices for deployment in the blockchains.
+                    </p>
+                </div>
+                <h2>4. Designed solution</h2>
+                <div class="paragraph">
+                    <p>
+                        The main requirement is to achieve PQ resistance of the blockchain with an
+                        emphasis on ensuring the integrity and security of transactions. This goal will be
+                        achieved by integrating new PQ cryptography and adhering to practices outlined
+                        in Section 4.1.
+                    </p>
+                </div>
+                <div class="paragraph">
+                    <p>
+                        Figure 1 illustrates the high-level blockchain scheme with highlighted components 
+                        on which the main focus will be placed. This blockchain stack is inspired
+                        by the stacked model presented in the Article by Homoliak et al. [7].
+                    </p>
+                </div>
+                <div class="paragraph">
+                    <p>
+                        Additionally, particular emphasis will also be placed on evaluating the performance 
+                        of this blockchain with the usage of various PQ digital signatures as
+                        well as with digital signatures currently in use. The usage is very simple, it
+                        is proposed as an open cryptocurrency for exchanging digital funds using an
+                        Account-based model.
+                    </p>
+                </div>
+                <div class="content-image">
+                    <img src="images/projects/pqb/bc-design-algs-1.png" alt="Fig. 1. High-level scheme of designed blockchain">
+                </div>
+                <div class="paragraph">
+                    <p>
+                        To achieve quantum resistance the following algorithms are employed:
+                    </p>
+                </div>
+                <div class="paragraph">
+                    <p>
+                        <b>Hash function</b> – As a hash function, is utilized the SHA-512, primarily
+                        because it aligns with the recommendations from the NCISA and the NSA
+                        also recommends it in their CNSA 2.0 suite.
+                    </p>
+                </div>
+                <div class="paragraph">
+                    <p>
+                        <b>Post-quantum cryptography</b> – There are implemented several algorithms
+                        for PQ digital signatures, the performance of which will be subsequently compared. 
+                        These are Falcon and Dilithium algorithms in all their levels, namely
+                        Falcon-512, Falcon-1024, Dilithium2, Dilithium3, and Dilithium5. Additionally, 
+                        these PQ algorithms will be compared with the currently prevalent
+                        ECDSA and EdDSA algorithms, specifically Ed25519, commonly used in
+                        existing blockchains.
+                    </p>
+                </div>
+                <div class="paragraph">
+                    <p>
+                        <b>Consensus mechanism</b> – As for the consensus mechanism, I have decided
+                        for the XRP Consensus Protocol. Even though this mechanism is a little
+                        more complex, it is very effective. In terms of PQ resistance, it does not
+                        use the principle of PoW or random selection of validators, but validators
+                        cooperate to achieve the consensus. However, this consensus uses a special
+                        type of messages called proposals that require digital signatures, so even
+                        there has to be employed mentioned PQ cryptography.
+                    </p>
+                </div>
+                <div class="paragraph">
+                    <p>
+                        <b>Transactions confidentiality</b> – Ensuring confidentiality of transactions
+                        will not be a part of this implementation, as it primarily pertains to permissioned 
+                        blockchains, and this aspect is already addressed by new PQ protocols
+                        such as KEMTLS, which ensure encrypted communication.
+                    </p>
+                </div>
+                <h2>5. Evaluation</h2>
+                <div class="paragraph">
+                    <p>
+                        The testing aimed to evaluate the performance of the implemented blockchain
+                        with the utilization of various algorithms for digital signatures. Testing was
+                        performed by initializing several Docker1 containers, with each container running
+                        one node instance.
+                    </p>
+                </div>
+                <div class="paragraph">
+                    <p>
+                        Measured attributes were the number of processor cycles, memory utilization
+                        of the application, and the amount of data sent/received during the runtime.
+                        Processor cycles were measured using the Linux utility perf stat2, memory
+                        utilization data was obtained from Docker stats, and the amount of transferred
+                        data was tracked by the application itself.
+                    </p>
+                </div>
+                <div class="paragraph">
+                    <p>
+                        The purpose of this scenario is to measure how size and performance requirements 
+                        grow with the increasing number of nodes and transactions. Tests were
+                        performed with 3, 5, 10, 15, and 20 nodes, each creating 20 transactions over
+                        50 seconds with an additional 30 seconds to reach a consensus. After this time,
+                        all nodes were stopped and performance statistics were captured. Subsequently,
+                        the results from all nodes across all five rounds were averaged. So, for example,
+                        with 10 nodes, there were averaged performance results from 10 nodes, and this
+                        process was repeated five times, and finally, all results were averaged.
+                    </p>
+                </div>
+                <h2>6. Results</h2>
+                <h3>6.1 Complexity</h3>
+                <div class="paragraph">
+                    <p>
+                        The chart in Figure 2 shows the average number of processor cycles performed
+                        by the application using different algorithms for digital signatures. Falcon’s PQ
+                        algorithms are almost at the same level as the currently used Ed25519 algorithm.
+                        Dilithium’s PQ algorithms are somewhat worse, but their results are not bad
+                        for practical use. In the categories of PQ algorithms, Falcon dominates mainly
+                        because it has a very fast signature verification process. Although the Dilithium
+                        algorithms have a much faster signing process, in blockchains the signing is only
+                        used when creating transactions and proposals and is performed only by their
+                        creator, while each node performs the signature verification of all transactions.
+                    </p>
+                </div>
+                <div class="content-image">
+                    <img src="images/projects/pqb/performance.png" alt="Fig. 2. Measured complexity of the validator application with different digital signature
+                    algorithms.">
+                </div>
+                <h3>6.2 Allocated memory</h3>
+                <div class="paragraph">
+                    <p>
+                        Allocated memory Chart 4 shows the average amounts of allocated memory
+                        during tests with different digital signature algorithms. The growth in memory
+                        allocation is not too steep across configurations with different node numbers.
+                        This is primarily because the utilized consensus mechanism creates a new block
+                        every few seconds, and after that, the new block is saved, and allocated data are
+                        freed. As a result, transactions do not accumulate and take up less memory.
+                    </p>
+                </div>
+                <div class="content-image">
+                    <img src="images/projects/pqb/memory.png" alt="Fig. 3. Measured memory allocation of the validator application with different digital
+                    signature algorithms.">
+                </div>
+                <h3>6.3 Amounts of transferred data</h3>
+                <div class="paragraph">
+                    <p>
+                        Amounts of transferred data The chart in Figure 3 shows average amounts
+                        of sent/received data during tests with different digital signature algorithms.
+                        Currently used algorithms Ed25519 and ECDSA are almost at the same level.
+                        The results of PQ algorithms correspond to their security levels; higher security
+                        levels entail larger keys and signatures, which results in a higher volume of
+                        transferred data. This graph highlights one of the major disadvantages of PQ
+                        cryptography for blockchains. The data transfer requirements grow significantly
+                        as the number of executed transactions or nodes in the network increases. While
+                        the growth is relatively moderate with the currently used algorithms it becomes
+                        more influential with PQ algorithms. For example, in the case of Dilithium5,
+                        when doubling the number of nodes from 10 to 20, the amount of transferred data
+                        is more than tripled. This growth is logical, and the results of this observation did
+                        not even need to be tested practically, as they can be approximately calculated.
+                    </p>
+                </div>
+                <div class="content-image">
+                    <img src="images/projects/pqb/transfer.png" alt="Fig. 4. Measured amounts of transferred data by the validator application with differ-
+                    ent digital signature algorithms.">
+                </div>
+                <h2>7. Performance testing discussion</h2>
+                <div class="paragraph">
+                    <p>
+                        The important findings from performance testing are:
+                    </p>
+                </div>
+                <div class="paragraph">
+                    <p>
+                        The measured complexity of PQ cryptography compared to currently used
+                        ECDSA and Ed25519 algorithms is not so terrible. The most significant
+                        factor is the effectiveness of a signature verification process. In this metric
+                        dominate Falcon algorithms, which are in terms of performance very close
+                        to the currently widely used algorithm Ed25519. Dilithium algorithms are
+                        somewhat worse, but in my opinion, they are still usable.
+                    </p>
+                </div>
+                <div class="paragraph">
+                    <p>
+                        Because of the sizes of PQ keys and signatures, applications utilizing PQ
+                        cryptography may necessitate the allocation of additional heap memory.
+                        This could potentially impact performance, as extensive heap memory usage
+                        might result in increased swapping to disk swap space. For blockchains, the
+                        results show that a consensus mechanism that creates new blocks more often
+                        with fewer transactions in one block can ensure that the program uses less
+                        allocated memory.   
+                    </p>
+                </div>
+                <div class="paragraph">
+                    <p>
+                        The primary concern for blockchains arises from the sizes of PQ keys and
+                        signatures. The results indicate that with PQ digital signature algorithms,
+                        individual nodes are required to transfer larger volumes of data compared
+                        to the presently employed ECDSA and Ed25519 algorithms. This not only
+                        escalates network traffic but also accelerates the overall growth of the blockchain’s 
+                        size. The key factor here is the number of active nodes in the block-
+                        chain network and the volume of transactions they generate. Furthermore,
+                        this issue may get even more significant if a hybrid combination of classical
+                        and PQ cryptography is employed for enhanced security.
+                    </p>
+                </div>
+                <div class="paragraph">
+                    <p>
+                        The important part of this thesis was also the analysis of blockchain and its
+                        vulnerabilities against quantum threats. Most of the threads are related to cryptography. 
+                        For this reason, this thesis analyzed new PQ algorithms and examined
+                        their suitability for use in blockchains. These analyses were then used to design
+                        and implement a blockchain resistant to quantum attacks. The implementation
+                        employs multiple PQ and currently used algorithms, which were compared in
+                        terms of performance to highlight the differences between PQ and current 
+                        cryptography in blockchains.
+                    </p>
+                </div>
+                <div class="paragraph">
+                    <p>
+                        The performance tests showed that PQ cryptography in blockchains is usable.
+                        Beneficial are mainly algorithms with fast digital signature verification. However,
+                        the main problem is the size of the public keys and digital signatures. The nodes
+                        in the blockchain network have to transfer larger amounts of data, and the overall
+                        size of the blockchains also grows significantly faster.
+                    </p>
+                </div>
+                <h2>References</h2>
+                <div class="paragraph">
+                    <p>
+                        1. Alagic, G., et al.: Status report on the third round of the nist post-
+                        quantum cryptography standardization process. Tech. rep., US Department of Commerce (7 2022). https://doi.org/10.6028/NIST.IR.8413,
+                        https://nvlpubs.nist.gov/nistpubs/ir/2022/NIST.IR.8413-upd1.pdf
+                    </p>
+                    <p>
+                        2. Bavdekar, R., et al.: Post quantum cryptography: A review of techniques,
+                        challenges and standardizations. In: 2023 International Conference on Information 
+                        Networking (ICOIN). pp. 146–151. IEEE Comput. Soc. Press, Bangkok,
+                        Thailand, 2023 (2 2023). https://doi.org/10.1109/ICOIN56518.2023.10048976,
+                        https://ieeexplore.ieee.org/abstract/document/10048976
+                    </p>
+                    <p>
+                        3. Dam, D.T., Tran, T.H., Hoang, V.P., Pham, C.K., Hoang, T.T.: A survey of
+                        post-quantum cryptography: Start of a new race. Cryptography 7(40) (8 2023).
+                        https://doi.org/10.3390/cryptography7030040, https://www.mdpi.com/2410-387X/7/3/40
+                    </p>
+                    <p>
+                        4. Fernández-Caramès, T.M., Fraga-Lamas, P.: Towards post-quantum blockchain: A
+                        review on blockchain cryptography resistant to quantum computing attacks. IEEE
+                        Access 8, 21091–21116 (12 2020). https://doi.org/10.1109/ACCESS.2020.2968985,
+                        https://ieeexplore.ieee.org/abstract/document/8967098
+                    </p>
+                    <p>
+                        5. Gomes, J., Khan, S., Svetinovic, D.: Fortifying the blockchain: A
+                        systematic review and classification of post-quantum consensus solutions 
+                        for enhanced security and resilience. IEEE Access 11,
+                        74088–74100 (7 2023). https://doi.org/10.1109/ACCESS.2023.3296559,
+                        https://ieeexplore.ieee.org/abstract/document/10185538
+                    </p>
+                    <p>
+                        6. Grover, L.K.: A fast quantum mechanical algorithm for database search. In:
+                        Proceedings of the twenty-eighth annual ACM symposium on Theory of computing - STOC ’96. p. 212–219. Philadelphia, Pennsylvania, USA: Associa-
+                        tion for Computing Machinery (7 1996). https://doi.org/10.1145/237814.237866,
+                        https://arxiv.org/abs/quant-ph/9605043
+                    </p>
+                    <p>
+                        7. Homoliak, I., Venugopalan, S., Hum, Q., Szalachowski, P.: A security reference 
+                        architecture for blockchains. CoRR abs/1904.06898
+                        (4 2019). https://doi.org/https://doi.org/10.48550/arXiv.1904.06898,
+                        http://arxiv.org/abs/1904.06898
+                    </p>
+                    <p>
+                        8.  Jacak, M.M., Jóźwiak, P., Niemczuk, J., Jacak, J.E.: Quantum generators 
+                        of random numbers. Scientific Reports 11(16108)
+                        (8 2021). https://doi.org/https://doi.org/10.1038/s41598-021-95388-7,
+                        https://www.nature.com/articles/s41598-021-95388-7
+                    </p>
+                    <p>
+                        9. Národní úřad pro kybernetickou a informační bezpečnost (NÚKIB): Příloha k
+                        dokumentu: Minimální požadavky na kryptografické algoritmy. Tech. rep., Brno
+                        (7 2023)
+                    </p>
+                    <p>
+                        10. Shor, P.W.: Algorithms for quantum computation: Discrete logarithms
+                        and factoring. In: Proceedings 35th Annual Symposium on Foundations of 
+                        Computer Science. p. 124–134. IEEE Comput. Soc. Press,
+                        Santa Fe, NM, USA (8 1994). https://doi.org/10.1109/SFCS.1994.365700,
+                        https://ieeexplore.ieee.org/abstract/document/365700
+                    </p>
+                    <p>
+                        11. Yang, Z., et al.: A survey and comparison of post-quantum and
+                        quantum blockchains. IEEE Communications Surveys & Tutorials 
+                        pp. 1–1 (10 2023). https://doi.org/10.1109/COMST.2023.3325761,
+                        https://ieeexplore.ieee.org/abstract/document/10288193
+                    </p>
+                </div>
+            </div>
+            <!-- END Main Content -->
+        </div>
+    </div>
+</body>
+</html>

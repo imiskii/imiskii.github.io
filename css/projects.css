@@ -1,0 +1,155 @@
+
+.projects{
+    padding-top: 40px;
+}
+
+.cert{
+    margin: 0.5em;
+}
+
+.large-projects{
+    display: flex;
+    flex-direction: column;
+    height: 50vh;
+}
+.large-projects h2{
+    color: #ffd400;
+    margin-top: 0.4em;
+    margin-bottom: 0em;
+}
+.large-projects .project-cards{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 1em;
+    overflow: auto;
+}
+.large-projects .project-cards .card{
+    position: relative;
+    width: 200px;
+    height: 250px;
+    display: block;
+    margin-right: 1em;
+    margin-bottom: 1em;
+    border: 0.1em solid #ecd561;
+    border-radius: 1em;
+    cursor: pointer;
+}
+.card .card-text{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+    background-color: #ecd561;
+    border-radius: 1em;
+    overflow: hidden;
+}
+.card-text:hover{
+    z-index: 2;
+}
+.card-content:hover ~ .card-text{
+    z-index: 2;
+}
+.card .card-text h3{
+    font-size: 16px;
+    margin: 0.4em;
+    color: black;
+}
+.card .card-text p{
+    margin: 0.4em;
+    color: black;
+    font-size: 12px;
+}
+.card .card-content{
+    background-color: #1c1c1c;
+    border-radius: 1em;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+}
+.card .card-content .image{
+    height: 70%;
+    width: 100%;
+}
+.card .card-content .image img{
+    width: 100%;
+    height: 100%;
+    border-radius: 1em 1em 0 0;
+}
+.card .card-content .card-label{
+    height: 30%;
+    margin: 0;
+    padding: 0;
+    border-top: 0.1em solid #ecd561;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.project-cards .card .card-content .card-label h3{
+    padding: 0;
+    margin: 0;
+    color: #ffd400;
+    text-align: center;
+}
+
+.small-projects{
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+}
+.small-projects h2{
+    color: #ffd400;
+    margin-top: 0.4em;
+    margin-bottom: 0em;
+}
+
+.sp-container{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    min-height: 350px;
+    padding-bottom: 0.6em;
+}
+
+.sp-scroll{
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    border: 0.1em solid #ecd561;
+    border-radius: 1em;
+    overflow: auto;
+}
+.sp-scroll .sp-item{
+    width: 100%;
+    padding: 0;
+    border-bottom: 0.1em solid #7b7a857a;
+    cursor: pointer;
+}
+.sp-scroll .sp-item:hover{
+    background-color: #ecd561;
+}
+.sp-scroll .selected-item{
+    background-color: #ffd400;
+    color: black;
+}
+
+.sp-scroll .sp-item p{
+    padding: 0.2em 1em;
+    margin: 0;
+    word-wrap: break-word;
+}
+
+.sp-text{
+    width: 75%;
+    height: 100%;
+    margin-left: 1.6em;
+}
+.sp-container .hidden{
+    display: none;
+}
+.sp-text h3{
+    margin: 0;
+}

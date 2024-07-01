@@ -8,49 +8,348 @@
     <link rel="icon" type="image/png" href="images/icons/MyLogo3.png">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://kit.fontawesome.com/2ff75daa4b.js" crossorigin="anonymous"></script>
+    <script src="js/redirect.js"></script>
     <script src="js/side-menu.js"></script>
+    <script src="js/sp.js"></script>
 </head>
 <body>
-    <div id="header">
-        <div class="container">
-            <nav>
-                <a href="index.html"><img src="images/MyLogo2White.png" class="logo"></a>
-                <ul id="sidemenu">
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="about.html">About me</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <i class="fa-solid fa-xmark" onclick="close_menu()"></i>
-                </ul>
-                <i class="fa-solid fa-bars" onclick="open_menu()"></i>
-            </nav>
-            <div class="main-container">
-                <div class="main-text-box">
-                    <h1>Hello, I'm <span>Michal&nbsp;Ľaš</span></h1>
-                    <p>I'm a young student interested in software engineering and computer security seeking opportunities to apply and expand skills in a professional setting.</p>
+    <div class="main-container">
+        <div class="menu">
+            <button onclick="open_menu()"><i class="fa-solid fa-bars"></i></button>
+        </div>
+        <div class="aside" id="sidemenu">
+            <div class="col-flexbox">
+                <div class="hide-menu">
+                    <button onclick="close_menu()"><i class="fa-solid fa-xmark"></i></button>
                 </div>
-                <div class="social-sites-btns">
-                    <ul>                    <ul>
-                        <li><a href="https://linkedin.com/in/michal-ľaš-882932278"><i class="fa-brands fa-linkedin-in"></i></a></li>
-                        <li><a href="https://github.com/imiskii/"><i class="fa-brands fa-github"></i></a></li>
-                        <li><a href="https://twitter.com/__Miski__"><i class="fa-brands fa-twitter"></i></a></li>
+                <div class="logo">
+                    <img src="images/MyLogo2White.png">
+                </div>
+                <div class="nav">
+                    <ul>
+                        <li class="clicked" onclick="redirect(this, 'Home')"><i class="fa-solid fa-house"></i>Home</li>
+                        <li class="" onclick="redirect(this, 'About')"><i class="fa-solid fa-user"></i>About</li>
+                        <li class="" onclick="redirect(this, 'Projects')"><i class="fa-solid fa-lightbulb"></i>Projects</li>
+                        <li class="" onclick="redirect(this, 'Contact')"><i class="fa-solid fa-comment"></i>Contact</li>
                     </ul>
                 </div>
             </div>
+            <div class="footer">
+                <div class="social-sites-footer">
+                    <ul>
+                        <li><a href="https://linkedin.com/in/michal-ľaš-882932278"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                        <li><a href="https://github.com/imiskii/"><i class="fa-brands fa-github"></i></a></li>
+                        <li><a href="https://x.com/__Miski__"><i class="fa-brands fa-x-twitter"></i></a></li>
+                    </ul>
+                </div>
+                <p>© 2024 Michal Ľaš</p>
+            </div>
+        </div>
+        <div class="main-content">
+            <!-- ===== Start Home Section ===== -->
+            <section class="home section" id="Home">
+                <div class="container">
+                    <div class="row">
+                        <div class="text-container col-flexbox">
+                            <h2>Hello, I'm <span>Michal Ľaš</span></h2>
+                            <p>
+                                Welcome to my website. This site serves as my personal resume presinting my projects, skills, interests, and more.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="text-container col-flexbox">
+                            <p>
+                                I'm a young student interested in decentralization, security, blockchains, computer networks, Web 3.0 and software engineering.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="social-sites-btns">
+                            <ul>                    <ul>
+                                <li><a href="https://linkedin.com/in/michal-ľaš-882932278"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                                <li><a href="https://github.com/imiskii/"><i class="fa-brands fa-github"></i></a></li>
+                                <li><a href="https://x.com/__Miski__"><i class="fa-brands fa-x-twitter"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- ===== End Home Section ===== -->
+            <!-- ===== Start About Section ===== -->
+            <section class="about section hidden" id="About">
+                <div class="container-start">
+                    <div class="row">
+                        <div class="text-container-wider col-flexbox">
+                            <h3>About me</h3>
+                            <div class="paragraph">
+                                <p>
+                                    I am a university student from Slovakia, currently studying at the Brno University of Technology, 
+                                    Faculty of Information Technology. Having recently completed my bachelor's degree, I am now 
+                                    pursuing a master's degree with a focus on artificial intelligence and security.<br><br>
+                                    My bachelor's thesis was about creating a blockchain resistant to quantum attacks, which combined 
+                                    blockchains and cryptography. It was graded A and taught me a lot about blockchain technology and 
+                                    post-quantum cryptography. For my master's thesis, I plan to focus on Web 3.0, a subject I am eager 
+                                    to explore further. I have also completed the Certified in Cybersecurity (CC) course from ISC2 and my 
+                                    technical skills include proficiency in C/C++, Python, and SQL, along with experience in blockchain development.<br><br>
+                                    My interests encompass decentralized networks, blockchains, Web 3.0, computer networks, security, 
+                                    and software engineering. After graduation, I aim to start my career in a dynamic tech company where 
+                                    I can further develop my skills and contribute to impactful projects.<br><br>
+                                    In my free time, I work on various projects to expand my knowledge and experience with new technologies. 
+                                    These projects include learning to program in <em>Rust</em>, using the <a href="https://libp2p.io/">libp2p</a> library, and creating a home network 
+                                    security monitoring system. You can find all my projects on my GitHub account.<br><br>
+                                    Feel free to connect with me to discuss technology, coding, or potential collaboration opportunities.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="text-container-wider">
+                            <h3>Soft skills</h3>
+                            <div class="paragraph">
+                                <p>
+                                    <ul>
+                                        <li>
+                                            <b>Problem-Solving</b> I think this is an elemental skill for every engineer. 
+                                            There are always problems that require solutions. For me, the most important 
+                                            are <em>critical thinking</em>, <em>creativity</em>, and <em>decision making</em>.
+                                        </li>
+                                        <li>
+                                            <b>Time Management</b> I am trying to be as organized as possible to manage my time effectively. 
+                                            I always have a TODO list with priorities and plan for the next day. On busy days or difficult projects, 
+                                            I also make myself a more detailed schedule. No plan or schedule is perfect, so <em>I believe that a good plan is 
+                                            only one that can be changed at any time.</em>
+                                        </li>
+                                        <li>
+                                            <b>Communication</b> I consider myself a quiet person. But it depends on the people around me. 
+                                            With people smarter than me, I used to listen; with people at my knowledge level, I used to actively discuss; 
+                                            and if I am with less smart people than I am, I would rather leave the room. The important aspects for me are 
+                                            being <em>clear</em>, <em>effective</em>, and sometimes use humor, so the conversation is less boring.
+                                        </li>
+                                        <li>
+                                            <b>Teamwork</b> In modern software development, it is practically impossible to develop something alone. 
+                                            It is a team game and I am always trying to be a strong team player.
+                                        </li>
+                                        <li>
+                                            <b>Leadership</b> I am not a natural leader, but whenever somebody gives me leadership I am ready to take 
+                                            responsibility for <em>decisions</em>, <em>delegation</em>, and <em>management</em>. I see my strength also in providing 
+                                            <em>guidance</em> and <em>support</em> to other colleagues.
+                                        </li>
+                                        <li>
+                                            <b>Work Ethic</b> I keep my word so that I can be <em>trustworthy</em> to others. Important aspects for me are being 
+                                            <em>reliable</em>, <em>honest</em>, <em>positive</em>, and <em>motivating</em> others. 
+                                        </li>
+                                        <li>
+                                            <b>Adaptability</b> Technologies are rapidly changing. For me are important <em>principles</em>, and I am always open to learning 
+                                            new stuff and discovering new ideas.
+                                        </li>
+                                    </ul>
+                                </p>
+                            </div>
+                            <h3>Hard skills</h3>
+                            <div class="paragraph">
+                                <p>
+                                    <ul>
+                                        <li>
+                                            <b>C/C++</b> I probably use these programming languages the most and have the most experience with them.
+                                        </li>
+                                        <li>
+                                            <b>Python</b> My second most used language. I use it mainly for smaller projects and quick automation.
+                                        </li>
+                                        <li>
+                                            <b>Bash/Shell</b> I mainly work on the Linux OS, so I am familiar also with its command line language.
+                                        </li>
+                                        <li>
+                                            <b>SQL</b> I did some projects in Oracle SQL and MySQL.
+                                        </li>
+                                        <li>
+                                            <b>HTML, CSS, JavaScript, PHP</b> Web design and development is not my strongest skill, but I know the basics.
+                                        </li>
+                                        <li>
+                                            <b>LaTeX</b> In the tech field, it is very good to use something else than MS Word. LaTeX is a great to write larger papers/documents.
+                                        </li>
+                                        <li>
+                                            <b>Linux</b> I used Ubuntu and Fedora OS, but now I mainly using Ubuntu.
+                                        </li>
+                                        <li>
+                                            <b>Git</b> A version system like Git is essential for effective teamwork. Personally, I keep all my projects on GitHub.
+                                        </li>
+                                        <li>
+                                            <b>Computer networks</b> Routing, IPv4, IPv6, TCP/UDP, widely used protocols on the application layer such as HTTP/S, DNS, IMAP, POP3, SMTP, SIP, RTP, SNMP, Netflow, Syslog. Basics of security IPSec, SSL/TLS, and more.
+                                        </li>
+                                        <li>
+                                            <b>Cryptography and Security</b> Symmetric, asymmetric, post-quantum cryptography.
+                                        </li>
+                                        <li>
+                                            <b>Object Oriented Programing</b> Especially in larger projects, I also try to use design patterns.
+                                        </li>
+                                    </ul>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="text-container-wider col-flexbox">
+                            <h3>Certificates</h3>
+                            <div class="cert">
+                                <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="ca9da79d-702d-413a-9a4a-cffbdc86d3db" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="text-container-wider col-flexbox">
+                            <h3>Education</h3>
+                            <div class="paragraph">
+                                <p>
+                                    <b>2024-</b><br>
+                                    (Ing.) Information Technology and Artificial Intelligence with specialization on cybersecurity<br>
+                                    <a href="https://www.fit.vut.cz/.en">Faculty of Information Technology, Brno University of Technology</a>
+                                </p>
+                                <p>
+                                    <b>2021-2024</b><br>
+                                    (Bc.) Information Technology<br>
+                                    <a href="https://www.fit.vut.cz/.en">Faculty of Information Technology, Brno University of Technology</a>
+                                </p>
+                                <p>
+                                    <b>2017-2021</b><br>
+                                    <a href="https://www.gymcadca.eu/">Secondary Grammar School of Jozef Miloslav Hurban, Čadca</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="text-container-wider col-flexbox">
+                            <h3>Hobby</h3>
+                            <div class="paragraph">
+                                <p>
+                                    In the fields of informatics, computer science, and software development, one never knows what additional skill may be handy to have.
+                                </p>
+                                <ul>
+                                    <li><b>Music production</b> I used to create music and beats in FL Studio, usually POP or EDM, but I like all kinds of music.</li>
+                                    <li><b>Sport, hiking, basketball, cycling</b> I also used to play football, volleyball and ping pong. Basically I like every sport.</li> 
+                                    <li><b>Reading</b> I usually read self-development literature, I don't read much fiction.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- ===== End About Section ===== -->
+            <!-- ===== Start Projects Section ===== -->
+            <section class="projects section hidden" id="Projects">
+                <div class="container-start">
+                    <div class="row">
+                        <div class="text-container-wider">
+                            <div class="large-projects">
+                                <h2>Projects</h2>
+                                <div class="project-cards">
+                                    <!-- START PQB -->
+                                    <a class="card" href="pqb.html">
+                                        <div class="card-content">
+                                            <div class="image">
+                                                <img src="images/projects/pqb/pqb.png">
+                                            </div>
+                                            <div class="card-label">
+                                                <h3>Blockchain resistant to quantum attacks</h3>
+                                            </div>
+                                        </div>
+                                        <div class="card-text">
+                                            <h3>Blockchain resistant to quantum attack</h3>
+                                            <p>
+                                                The goal of this project was to create a post-quantum blockchain. This involved analyzing the threats quantum 
+                                                computers pose to blockchains, identifying suitable post-quantum cryptographic algorithms, implementing 
+                                                the blockchain, and investigating how these algorithms affect blockchain performance.
+                                            </p>
+                                        </div>
+                                    </a>
+                                    <!-- END PQB -->
+                                    <!-- ... -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="text-container-wider">
+                            <div class="small-projects">
+                                <h2>Other smaller projects</h2>
+                                <p>
+                                    Just some of my smaller project from studies at FIT VUT. These project present things and tools that I came in touch with.
+                                </p>
+                                <div class="sp-container">
+                                    <div class="sp-scroll">
+                                        <div class="sp-item selected-item" onclick="switch_sp(this, 'PHP compiler')">
+                                            <p>PHP compiler</p>
+                                        </div>
+                                        <div class="sp-item" onclick="switch_sp(this, 'l4-port-scanner')">
+                                            <p>l4-port-scanner</p>
+                                        </div>
+                                        <div class="sp-item" onclick="switch_sp(this, 'dhcp-stats')">
+                                            <p>dhcp-stats</p>
+                                        </div>
+                                        <div class="sp-item" onclick="switch_sp(this, 'IS for event management')">
+                                            <p>IS for event management</p>
+                                        </div>
+                                        <div class="sp-item" onclick="switch_sp(this, 'Bluetooth Metronome')">
+                                            <p>Bluetooth Metronome</p>
+                                        </div>
+                                        <div class="sp-item" onclick="switch_sp(this, 'Steganography')">
+                                            <p>Steganography</p>
+                                        </div>
+                                        <div class="sp-item" onclick="switch_sp(this, 'Hash table')">
+                                            <p>Hash table</p>
+                                        </div>
+                                        <div class="sp-item" onclick="switch_sp(this, 'Client to remote server')">
+                                            <p>Client to remote server</p>
+                                        </div>
+                                        <div class="sp-item" onclick="switch_sp(this, 'IPPcode23 Interpreter')">
+                                            <p>IPPcode23 Interpreter</p>
+                                        </div>
+                                        <div class="sp-item" onclick="switch_sp(this, 'Database for construction company')">
+                                            <p>Database for construction company</p>
+                                        </div>
+                                    </div>
+                                    <div class="sp-text">
+                                        <h3 id="sp-name">PHP compiler</h3>
+                                        <p id="sp-text">
+                                            Compiler implementation for imperative language IFJ22 (based on PHP). This is a team project, 
+                                            created in the C programming language. 4 people worked on this project. My work on the project 
+                                            was lexical analysis, symbol table, abstract data structures stack and hash table. The result 
+                                            is a program that receives the code written in IFJ22 at the input and returns compiled intermediate 
+                                            code similar to assembler. During the project, I had the opportunity to enhance my teamwork skills 
+                                            while putting my practical knowledge of the versioning system Git into action. Furthermore, 
+                                            I was able to apply my solid foundation in C programming, which proved beneficial to the success 
+                                            of the project.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- ===== End Projects Section ===== -->
+            <!-- ===== Start Contact Section ===== -->
+            <section class="contact section hidden" id="Contact">
+                <div class="container">
+                    <div class="row">
+                        <div class="text-container col-flexbox">
+                            <h3>Contact me</h3>
+                            <div class="contact-email">
+                                <p><i class="fa-solid fa-envelope"></i> las.michal@lasmichal.com</p>
+                            </div>
+                            <div class="social-sites">
+                                <ul>
+                                    <li><a href="https://linkedin.com/in/michal-ľaš-882932278"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                                    <li><a href="https://github.com/imiskii/"><i class="fa-brands fa-github"></i></a></li>
+                                    <li><a href="https://x.com/__Miski__"><i class="fa-brands fa-x-twitter"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- ===== End Contact Section ===== -->
         </div>
     </div>
 </body>
-<footer>
-    <div class="footer-container">
-        <div class="social-sites-footer">
-            <ul>
-                <li><a href="https://linkedin.com/in/michal-ľaš-882932278"><i class="fa-brands fa-linkedin-in"></i></a></li>
-                <li><a href="https://github.com/imiskii/"><i class="fa-brands fa-github"></i></a></li>
-                <li><a href="https://twitter.com/__Miski__"><i class="fa-brands fa-twitter"></i></a></li>
-            </ul>
-        </div>
-    </div>
-    <div class="footer-bottom">
-        <p>&copy; 2023 Michal Ľaš</p>
-    </div>
-</footer>
 </html>
