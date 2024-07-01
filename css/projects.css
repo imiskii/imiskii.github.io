@@ -116,6 +116,7 @@
 
 .sp-scroll{
     width: 25%;
+    max-height: 800px;
     display: flex;
     flex-direction: column;
     border: 0.1em solid #ecd561;

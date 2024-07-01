@@ -242,6 +242,7 @@ body {
     }
     .sp-scroll{
         width: 4em;
+        max-height: 600px;
     }
     .sp-scroll .sp-item{
         writing-mode: vertical-lr;
@@ -251,6 +252,7 @@ body {
     }
     .sp-scroll .sp-item p{
         padding: 1em;
+        text-wrap: nowrap;
     }
 }
 
