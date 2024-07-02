@@ -1,4 +1,11 @@
 
+.home{
+    width: 100%;
+    height: 100vh;
+    background-image: url(../images/wIcon.png);
+    background-size: cover;
+    background-position: center;
+}
 
 .text-container h2 span{
     color: #D7263D;
