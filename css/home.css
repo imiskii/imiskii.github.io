@@ -1,12 +1,49 @@
 
 .home{
-    width: 100%;
     height: 100vh;
-    background-image: url(../images/wIcon.png);
-    background-size: cover;
-    background-position: center;
 }
 
-.text-container h2 span{
-    color: #D7263D;
+.home .home-bg img{
+    position: absolute;
+    width: 98%;
+    height: 100%;
+    object-fit: contain;
+    z-index: -2;
+}
+
+.name-label{
+    margin: 0.6em 0 0 0;
+    font-size: 30px;
+    letter-spacing: 4px;
+}
+.name-label span{
+    color: var(--skin-red-50);
+}
+
+.icons-container{
+    width: 96%;
+    height: 100vh;
+    position: absolute;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.icons-container .floating-icon{
+    position: absolute;
+    pointer-events: none;
+    z-index: -3;
+    transition: transform 7s ease-in-out;
+    opacity: 0;
+
+    animation: 7s appear ease-in-out 2.5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes appear{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
 }

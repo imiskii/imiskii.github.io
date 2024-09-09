@@ -3,13 +3,184 @@
     padding-top: 40px;
 }
 
-.text-container h3{
-    color: #ffd400;
-    margin-top: 0.6em;
-    margin-bottom: 0;
+
+/* Skills */
+
+.skills-content{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: start;
 }
-.text-container-wider h3{
-    color: #ffd400;
-    margin-top: 0.6em;
+
+.skills-container{
+    width: 50%;
+    align-items:start;
+    display: flex;
+    flex-direction: column;
+    margin: 2em
+}
+.skills-container h3{
+    font-family: var(--spec-font);
+    color: var(--skin-yellow-100);
+    font-size: 1.7em;
+    border-bottom: 3px solid var(--skin-orange-100);
+}
+.skills-container h3, .skills-container i{
+    margin-bottom: 1em;
+}
+
+.skills-container ul{
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.skills-container li{ /* Wrapper */
+    display: flex;
+    flex-direction: column;
+    transition-delay: 200ms;
+}
+
+.skills-container li:hover .skill-description{
+    max-height: 100%;
+    margin-bottom: 0.6em;
+    visibility: visible;
+    transition: max-height 0.5s ease-in, visibility 0.8s ease-in, margin-bottom 0.2s ease-in;
+    transition-delay: 0.2s;
+}
+.skills-container ul li:hover .skill-label{
+    background: var(--skin-red-50);
+    border-radius: 1em 1em 0 0;
+    box-shadow: none;
+    transition: background 0.5s ease-in;
+}
+
+.skills-container ul li .skill-label{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    font-family: var(--spec-font);
+    font-size: 1.2em;
+    padding: 0.4em 0.8em;
+    border-radius: 1em;
+    color: var(--text-black-900);
+    width: 100%;
+    background: linear-gradient(to bottom right, var(--skin-yellow-100) 30%, var(--skin-yellow-50));
+    box-shadow: 2px 2px 4px var(--skin-orange-100);
+    cursor: pointer;
+    transition: background 0.5s ease-out, border-radius 0.5s ease-out 0.6s;
+}
+
+.skills-container ul li .skill-description{ /* Inner */
+    max-height: 0;
+    padding: 0.6em;
     margin-bottom: 0;
+    overflow: hidden;
+    visibility: hidden;
+    width: 100%;
+    background: var(--bg-black-100);
+    border-radius: 0 0 1em 1em;
+    transition: max-height 1s ease-out, visibility 0.8s ease-out, margin-bottom 0.2s ease-out;
+}
+
+/* Education */
+
+.education-timeline{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: 6em 2em 0 2em;
+}
+.education-timeline::before{
+    position: absolute;
+    content: '';
+    width: 98%;
+    height: 4px;
+    background: var(--skin-orange-100);
+    margin-bottom: 3em;
+    top: -3em;
+    animation: moveline-horizontal 4s linear forwards;
+}
+
+
+@keyframes moveline-horizontal{
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 98%;
+    }
+}
+@keyframes moveline-vertical{
+    0%{
+        height: 0%;
+    }
+    100%{
+        height: 98%;
+    }
+}
+
+.education-cards{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.education-timeline .education-container{
+    position: relative;
+    padding: 1em;
+    margin: 0em 0.4em 2em 0.4em;
+    height: 100%;
+    width: 33%;
+    border-radius: 1em;
+    background-color: var(--bg-black-100);
+    box-shadow: 4px 4px 6px var(--bg-black-50), 2px 2px 4px var(--skin-orange-100);
+}
+.education-timeline .education-container p{
+    margin: 0 !important;
+}
+.education-timeline .education-container:nth-child(1){
+    transition-delay: 200ms;
+}
+.education-timeline .education-container:nth-child(2){
+    transition-delay: 400ms;
+}
+.education-timeline .education-container:nth-child(3){
+    transition-delay: 600ms;
+}
+
+.education-container img{
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    z-index: 5;
+    top: -4.5em;
+    background: var(--text-white-900);
+    border-radius: 50%;
+    border: 3px solid var(--skin-orange-100);
+}
+
+.education-container .date{
+    position: absolute;
+    top: -2.5em;
+    left: 75px;
+    color: var(--skin-yellow-100);
+    font-weight: 700;
+}
+
+.education-container .arrow{
+    height: 0;
+    width: 0;
+    position: absolute;
+    top: -15px;
+    left: 25px;
+    z-index: 3;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 15px solid var(--skin-orange-100);
 }

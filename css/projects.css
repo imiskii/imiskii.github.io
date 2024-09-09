@@ -8,12 +8,12 @@
 }
 
 .large-projects{
+    width: 100%;
     display: flex;
     flex-direction: column;
-    height: 50vh;
 }
 .large-projects h2{
-    color: #ffd400;
+    color: var(--skin-yellow-100);
     margin-top: 0.4em;
     margin-bottom: 0em;
 }
@@ -28,42 +28,51 @@
 }
 .large-projects .project-cards .card{
     position: relative;
-    width: 200px;
-    height: 250px;
+    width: 300px;
+    height: 400px;
     display: block;
     margin-right: 1em;
     margin-bottom: 1em;
-    border: 0.1em solid #ecd561;
+    border: 2px solid var(--skin-orange-100);
     border-radius: 1em;
     cursor: pointer;
 }
+.large-projects .project-cards .card:nth-child(1){
+    transition-delay: 200ms;
+}
+
 .card .card-text{
     position: absolute;
     height: 100%;
     width: 100%;
-    z-index: 0;
-    background-color: #ecd561;
+    z-index: 2;
+    background-color: var(--skin-yellow-50);
     border-radius: 1em;
     overflow: hidden;
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
 }
 .card-text:hover{
-    z-index: 2;
+    opacity: 1;
 }
-.card-content:hover ~ .card-text{
-    z-index: 2;
+.card-content:hover + .card-text{
+    opacity: 1;
 }
 .card .card-text h3{
-    font-size: 16px;
-    margin: 0.4em;
-    color: black;
+    font-size: 1.2em;
+    width: 100%;
+    padding: 0.8em 0.8em 0 0.8em;
+    margin: 0;
+    color: var(--text-black-900);
+    border-bottom: none;
 }
 .card .card-text p{
-    margin: 0.4em;
-    color: black;
-    font-size: 12px;
+    padding: 0.8em;
+    margin: 0;
+    color: var(--text-black-900);
 }
 .card .card-content{
-    background-color: #1c1c1c;
+    background-color: var(--bg-black-100);
     border-radius: 1em;
     position: absolute;
     height: 100%;
@@ -71,7 +80,7 @@
     z-index: 1;
 }
 .card .card-content .image{
-    height: 70%;
+    height: 80%;
     width: 100%;
 }
 .card .card-content .image img{
@@ -80,18 +89,19 @@
     border-radius: 1em 1em 0 0;
 }
 .card .card-content .card-label{
-    height: 30%;
+    height: 20%;
     margin: 0;
-    padding: 0;
-    border-top: 0.1em solid #ecd561;
+    padding: 1em;
     display: flex;
     align-items: center;
     justify-content: center;
+    border-top: 2px solid var(--skin-orange-100);
+    border-radius: 0 0 1em 1em;
 }
 .project-cards .card .card-content .card-label h3{
     padding: 0;
     margin: 0;
-    color: #ffd400;
+    color: var(--skin-yellow-100);
     text-align: center;
 }
 
@@ -101,7 +111,7 @@
     flex-direction: column;
 }
 .small-projects h2{
-    color: #ffd400;
+    color: var(--skin-yellow-100);
     margin-top: 0.4em;
     margin-bottom: 0em;
 }
@@ -119,21 +129,22 @@
     max-height: 800px;
     display: flex;
     flex-direction: column;
-    border: 0.1em solid #ecd561;
+    border: 0.1em solid var(--skin-yellow-50);
     border-radius: 1em;
     overflow: auto;
 }
 .sp-scroll .sp-item{
     width: 100%;
     padding: 0;
-    border-bottom: 0.1em solid #7b7a857a;
+    border-bottom: 0.1em solid var(--text-grey-100);
     cursor: pointer;
+    transition: 0.4s ease-in-out;
 }
 .sp-scroll .sp-item:hover{
-    background-color: #ecd561;
+    background-color: var(--skin-yellow-50);
 }
 .sp-scroll .selected-item{
-    background-color: #ffd400;
+    background-color: var(--skin-yellow-100);
     color: black;
 }
 
@@ -144,31 +155,45 @@
 }
 
 .project-header{
+    width: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: start;
 }
-.project-header a{
-    margin-left: 2em;
-    color: white;
+.project-header h4{
+    width: 70%;
+    padding-right: 1em;
+    margin: 0;
+}
+.project-header .link{
+    width: 30%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.project-header .link a{
+    color: var(--text-white-900);
     font-size: 16px;
     text-decoration: underline;
 }
-.project-header a:hover{
-    color: #ecd561;
+.project-header .link a:hover{
+    color: var(--skin-yellow-50);
 }
-.project-header a i{
-    margin-right: 0.4em;
+.project-header .link i{
+    padding-right: 0.4em;
 }
 
+
 .sp-text{
-    width: 75%;
+    width: 100%;
     height: 100%;
-    margin-left: 1.6em;
+    padding-left: 1.6em;
 }
 .sp-container .hidden{
     display: none;
 }
-.sp-text h3{
+.sp-text p{
     margin: 0;
 }

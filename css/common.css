@@ -1,23 +1,114 @@
 
+h2{
+    width: max-content;
+    margin: 0;
+    font-family: var(--spec-font);
+    color: var(--skin-yellow-100);
+    font-size: 2.4em;
+    border-bottom: 3px solid var(--skin-orange-100);
+    letter-spacing: 0.5em;
+}
+
+h3{
+    width: max-content;
+    margin: 0;
+    font-family: var(--spec-font);
+    color: var(--skin-yellow-100);
+    font-size: 2em;
+    letter-spacing: 0.06em;
+    border-bottom: 3px solid var(--skin-orange-100);
+}
+
+h4{
+    width: max-content;
+    margin: 0;
+    font-family: var(--spec-font);
+    color: var(--skin-yellow-100);
+    font-size: 1.5em;
+    letter-spacing: 0.06em;
+}
+
+ul{
+    list-style: none;
+    text-decoration: none;
+}
+
+
+.hidden{
+    opacity: 0;
+    transition: all 1s;
+}
+.hidden-vertical{
+    transform: translateY(-100%);
+}
+.hidden-horizontal{
+    filter: blur(5px);
+    transform: translateX(-100%);
+}
+
+
+.show{
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0) translateY(0);
+}
+
+.header-icon{
+    color: var(--skin-orange-100);
+    display: flex !important;
+    align-items: center;
+    margin-right: 0.4em;
+    font-size: 2em;
+}
+
+.text-container{
+    height: fit-content;
+    width: 50%;
+    padding: 0.1em 1em;
+    margin: 0.6em;
+    border-radius: 1em;
+    align-items: start;
+}
+.text-container h2{
+    margin-bottom: 0;
+}
+.text-container-wider{
+    height: fit-content;
+    width: 100%;
+    padding: 0.1em 1em;
+    margin: 0.6em;
+    border-radius: 1em;
+    align-items: start;
+}
+.text-container-color{
+    background-color: var(--bg-black-100);
+    box-shadow: 4px 4px 6px var(--bg-black-50), 2px 2px 4px var(--skin-orange-100);
+}
+
+.text-container h3, .text-container-wider h3{
+    margin-top: 0.6em;
+    margin-bottom: 0.5em;
+}
+
+
 .col-flexbox{
     display: flex;
     flex-direction: column;
+}
+.flexbox-center{
     align-items: center;
 }
 
 .row-flexbox{
     display: flex;
     flex-direction: row;
-    align-items: center;
 }
 
-.paragraph{
-    margin-top: 1em;
-}
+
 .paragraph b{
     color: #ffd400;
 }
-.paragraph p a{
+.paragraph p a, .skill-description a{
     color: #ecd561;
 }
 .paragraph ul{
@@ -26,11 +117,7 @@
 .paragraph li{
     margin-bottom: 0.4em;
 }
-.paragraph em{
+.paragraph em, .skill-description em{
     color: #ecd561;
 }
 
-ul{
-    list-style: none;
-    text-decoration: none;
-}
