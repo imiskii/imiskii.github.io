@@ -17,9 +17,23 @@
     <script src="js/sp.js"></script>
     <script src="js/random_movement.js"></script>
     <script src="js/theme_switch.js" defer></script>
+    <script src="js/loading.js" defer></script>
     <script defer src="js/scroll-observer.js"></script>
 </head>
 <body>
+    <div class="loading-container">
+        <div class="col-flexbox">
+            <div class="row-flexbox center-center">
+                <div class="loading-text">Programmer loading</div><span class="dots">...</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-bar-inner"></div>
+            </div>
+            <div class="row-flexbox center-left">
+                <div class="rotating-text">Loading skills...</div>
+            </div>
+        </div>
+    </div>
     <div class="main-container">
         <div class="menu">
             <button onclick="open_menu()"><i class="fa-solid fa-bars"></i></button>
