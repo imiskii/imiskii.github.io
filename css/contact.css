@@ -20,7 +20,7 @@
 
 .contact-email{
     font-size: 18px;
-    color: white;
+    color: var(--text-main);
 }
 .contact-email p{
     margin-top: 1em;
@@ -40,7 +40,7 @@
 }
 .social-sites a{
     text-decoration: none;
-    color: #fff;
+    color: var(--text-main);
 }
 .social-sites a i{
     font-size: 1.5rem;

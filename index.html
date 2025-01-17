@@ -16,6 +16,7 @@
     <script src="js/side-menu.js"></script>
     <script src="js/sp.js"></script>
     <script src="js/random_movement.js"></script>
+    <script src="js/theme_switch.js" defer></script>
     <script defer src="js/scroll-observer.js"></script>
 </head>
 <body>
@@ -29,15 +30,26 @@
                     <button onclick="close_menu()"><i class="fa-solid fa-xmark"></i></button>
                 </div>
                 <div class="logo">
+                    <img src="images/MyLogo2Black.png">
                     <img src="images/MyLogo2White.png">
                 </div>
                 <div class="nav">
                     <ul>
                         <li class="clicked font-bebas" onclick="redirect(this, 'Home')"><i class="fa-solid fa-house"></i>Home</li>
-                        <li class="font-bebas" onclick="redirect(this, 'About')"><i class="fa-solid fa-user"></i>About</li>
+                        <li class="font-bebas" onclick="redirect(this, 'About')"><i class="fa-solid fa-user"></i>About me</li>
                         <li class="font-bebas" onclick="redirect(this, 'Projects')"><i class="fa-solid fa-lightbulb"></i>Projects</li>
                         <li class="font-bebas" onclick="redirect(this, 'Contact')"><i class="fa-solid fa-comment"></i>Contact</li>
                     </ul>
+                </div>
+                <div class="theme-switch-container">
+                    <div class="theme-switch">
+                        <i class="fa-solid fa-moon moon"></i>
+                        <i class="fa-solid fa-sun sun"></i>
+                        <div class="theme-trigger">
+                            <i class="fa-solid fa-sun"></i>
+                            <i class="fa-solid fa-moon"></i>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="footer">
@@ -48,7 +60,7 @@
                         <li><a href="https://x.com/__Miski__"><i class="fa-brands fa-x-twitter"></i></a></li>
                     </ul>
                 </div>
-                <p>© 2024 Michal Ľaš</p>
+                <p>© 2025 Michal Ľaš</p>
             </div>
         </div>
         <div class="main-content">

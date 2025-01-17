@@ -81,8 +81,8 @@ ul{
     align-items: start;
 }
 .text-container-color{
-    background-color: var(--bg-black-100);
-    box-shadow: 4px 4px 6px var(--bg-black-50), 2px 2px 4px var(--skin-orange-100);
+    background-color: var(--bg-100);
+    box-shadow: 4px 4px 6px var(--bg-50), 2px 2px 4px var(--skin-orange-100);
 }
 
 .text-container h3, .text-container-wider h3{
@@ -106,10 +106,10 @@ ul{
 
 
 .paragraph b{
-    color: #ffd400;
+    color: var(--skin-yellow-100);
 }
 .paragraph p a, .skill-description a{
-    color: #ecd561;
+    color: var(--skin-yellow-50);
 }
 .paragraph ul{
     list-style: circle;
@@ -118,6 +118,6 @@ ul{
     margin-bottom: 0.4em;
 }
 .paragraph em, .skill-description em{
-    color: #ecd561;
+    color: var(--skin-yellow-50);
 }
 

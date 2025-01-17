@@ -63,16 +63,16 @@
     width: 100%;
     padding: 0.8em 0.8em 0 0.8em;
     margin: 0;
-    color: var(--text-black-900);
+    color: var(--text-oposite);
     border-bottom: none;
 }
 .card .card-text p{
     padding: 0.8em;
     margin: 0;
-    color: var(--text-black-900);
+    color: var(--text-oposite);
 }
 .card .card-content{
-    background-color: var(--bg-black-100);
+    background-color: var(--bg-100);
     border-radius: 1em;
     position: absolute;
     height: 100%;
@@ -136,7 +136,7 @@
 .sp-scroll .sp-item{
     width: 100%;
     padding: 0;
-    border-bottom: 0.1em solid var(--text-grey-100);
+    border-bottom: 0.1em solid var(--text-grey);
     cursor: pointer;
     transition: 0.4s ease-in-out;
 }
@@ -145,7 +145,7 @@
 }
 .sp-scroll .selected-item{
     background-color: var(--skin-yellow-100);
-    color: black;
+    color: var(--text-oposite);
 }
 
 .sp-scroll .sp-item p{
@@ -174,7 +174,7 @@
     align-items: center;
 }
 .project-header .link a{
-    color: var(--text-white-900);
+    color: var(--text-main);
     font-size: 16px;
     text-decoration: underline;
 }

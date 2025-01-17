@@ -27,7 +27,7 @@
     color: #101D42;
 }
 .social-sites-btns ul li .fa-brands:hover{
-    color: var(--text-white-900);
+    color: white;
 }
 .social-sites-btns ul li a{
     position: relative;
@@ -35,7 +35,7 @@
     width: 5rem;
     height: 5rem;
     border-radius: 50%;
-    background-color: var(--text-white-900);
+    background-color: white;
     text-align: center;
     transition: 0.6s;
     box-shadow: 0 0.5rem 0.4rem rgba(0, 0, 0, 0.5);
@@ -69,7 +69,7 @@
 }
 .social-sites-footer a{
     text-decoration: none;
-    color: var(--text-white-900);
+    color: var(--text-main);
 }
 .social-sites-footer a i{
     font-size: 1.5rem;

@@ -67,7 +67,7 @@
     font-size: 1.2em;
     padding: 0.4em 0.8em;
     border-radius: 1em;
-    color: var(--text-black-900);
+    color: var(--text-oposite);
     width: 100%;
     background: linear-gradient(to bottom right, var(--skin-yellow-100) 30%, var(--skin-yellow-50));
     box-shadow: 2px 2px 4px var(--skin-orange-100);
@@ -82,7 +82,7 @@
     overflow: hidden;
     visibility: hidden;
     width: 100%;
-    background: var(--bg-black-100);
+    background: var(--bg-100);
     border-radius: 0 0 1em 1em;
     transition: max-height 1s ease-out, visibility 0.8s ease-out, margin-bottom 0.2s ease-out;
 }
@@ -138,8 +138,8 @@
     height: 100%;
     width: 33%;
     border-radius: 1em;
-    background-color: var(--bg-black-100);
-    box-shadow: 4px 4px 6px var(--bg-black-50), 2px 2px 4px var(--skin-orange-100);
+    background-color: var(--bg-100);
+    box-shadow: 4px 4px 6px var(--bg-50), 2px 2px 4px var(--skin-orange-100);
 }
 .education-timeline .education-container p{
     margin: 0 !important;
@@ -160,7 +160,7 @@
     width: 50px;
     z-index: 5;
     top: -4.5em;
-    background: var(--text-white-900);
+    background: white;
     border-radius: 50%;
     border: 3px solid var(--skin-orange-100);
 }

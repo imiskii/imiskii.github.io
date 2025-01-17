@@ -34,10 +34,10 @@ ul{
 /* Paragraph */
 
 .paragraph b{
-    color: #ffd400;
+    color: var(--skin-yellow-100);
 }
 .paragraph p a, .skill-description a{
-    color: #ecd561;
+    color: var(--skin-yellow-50);
 }
 .paragraph ul{
     list-style: circle;
@@ -46,7 +46,7 @@ ul{
     margin-bottom: 0.4em;
 }
 .paragraph em, .skill-description em{
-    color: #ecd561;
+    color: var(--skin-yellow-50);
 }
 
 
@@ -65,8 +65,8 @@ body {
     padding: 0;
     line-height: 1.5;
     font-size: 16px;
-    color: var(--text-white-900);
-    background: var(--bg-black-50);
+    color: var(--text-main);
+    background: var(--bg-50);
 }
 
 .main-container{
@@ -87,7 +87,7 @@ body {
     padding: 0.8em;
     margin: 0.4em;
     border-radius: 1em;
-    color: black;
+    color: var(--text-oposite);
     background-color: var(--skin-yellow-50);
     transition: 0.4s;
 }
@@ -110,7 +110,7 @@ body {
     display: flex;
     flex-direction: column;
     padding: 1.5em;
-    background-color: var(--bg-black-100);
+    background-color: var(--bg-100);
     border-radius: 1em;
 }
 
@@ -126,7 +126,7 @@ body {
 }
 
 .project-links .link{
-    color: white;
+    color: var(--text-main);
     font-size: 1.1em;
     cursor: pointer;
 }
@@ -177,20 +177,20 @@ body {
     margin-bottom: 10px;
 }
 .content-image th{
-    color: black;
+    color: var(--text-oposite);
 }
 .content-image th, td {
-    border: 1px solid black;
+    border: 1px solid var(--text-oposite);
     padding: 6px 8px;
 }
 .content-image th {
     background-color: var(--skin-style-2);
 }
 .content-image tbody tr:nth-child(even) {
-    background-color: var(--text-grey-100);
+    background-color: var(--text-grey);
 }
 .content-image tbody tr:hover {
-    background-color: var(--bg-black-50);
+    background-color: var(--bg-50);
 }
 
 

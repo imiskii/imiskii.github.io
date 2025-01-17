@@ -1,11 +1,23 @@
 
 :root{
-    --bg-black-900:#191919;
-    --bg-black-100:#1c1c1c;
-    --bg-black-50: #403f41;
-    --text-white-900: #ffffff;
-    --text-black-900: #000000;
-    --text-grey-100: #999999;
+    --bg-100:#1c1c1c;
+    --bg-50: #403f41;
+    --text-main: #ffffff;
+    --text-oposite: #000000;
+    --text-grey: #999999;
+    --skin-yellow-100: #ffd400;
+    --skin-yellow-50: #e0c643;
+    --skin-orange-100: #ff5e00;
+    --skin-red-50: #D7263D;
+    --spec-font: 'Bebas Neue', sans-serif;
+}
+
+.lightmode{
+    --bg-100:#ffffff;
+    --bg-50: #b9b9b9;
+    --text-main: #000000;
+    --text-oposite: #ffffff;
+    --text-grey: #999999;
     --skin-yellow-100: #ffd400;
     --skin-yellow-50: #e0c643;
     --skin-orange-100: #ff5e00;
