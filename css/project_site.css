@@ -1,4 +1,7 @@
 
+
+@import 'theme-switch.css';
+
 /* Common styles */
 
 h1{
@@ -36,6 +39,9 @@ ul{
 .paragraph b{
     color: var(--skin-yellow-100);
 }
+.paragraph p{
+    text-indent: 20px;
+}
 .paragraph p a, .skill-description a{
     color: var(--skin-yellow-50);
 }
@@ -66,7 +72,7 @@ body {
     line-height: 1.5;
     font-size: 16px;
     color: var(--text-main);
-    background: var(--bg-50);
+    background: var(--bg-100);
 }
 
 .main-container{
@@ -74,28 +80,35 @@ body {
     min-height: 100vh;
 }
 
-.back-btns{
+.small-nav{
     position: fixed;
     top: 40px;
     right: 40px;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    padding: 0.5em;
+    border-radius: 1.6em;
+    background-color: var(--bg-100);
 }
-.back-btns a{
-    padding: 0.8em;
-    margin: 0.4em;
-    border-radius: 1em;
+.small-nav a{
+    height: 3.2em;
+    width: 3.2em;
+    margin-right: 0.6em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
     color: var(--text-oposite);
     background-color: var(--skin-yellow-50);
     transition: 0.4s;
 }
-.back-btns a:hover{
+.small-nav a:hover{
     background-color: var(--skin-yellow-100);
 }
-.back-btns a i{
-    margin-right: 0.6em;
+.small-nav a i{
+    font-size: 1.8em;
 }
 
 /* Content styles */
@@ -110,7 +123,7 @@ body {
     display: flex;
     flex-direction: column;
     padding: 1.5em;
-    background-color: var(--bg-100);
+    background-color: var(--bg-50);
     border-radius: 1em;
 }
 
@@ -125,15 +138,15 @@ body {
     align-items: center;
 }
 
-.project-links .link{
-    color: var(--text-main);
+.link{
+    color: var(--skin-red-50);
     font-size: 1.1em;
     cursor: pointer;
 }
-.project-links .link:hover{
-    color: var(--skin-style-2);
+.link:hover{
+    color: var(--skin-yellow-50);
 }
-.project-links .link i{
+.link i{
     margin-right: 0.4em;
 }
 
@@ -153,10 +166,15 @@ body {
 
 .content-image{
     width: 100%;
+    margin: 20px 0;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+.content-image .caption{
+    margin-top: 0.5em;
+    font-weight: bold;
 }
 .content-image img{
     max-width: 80%;
@@ -166,7 +184,6 @@ body {
 .content-image table {
     width: 70%;
     border-collapse: collapse;
-    margin: 20px 0;
     font-size: 16px;
     text-align: left;
 }
@@ -177,10 +194,10 @@ body {
     margin-bottom: 10px;
 }
 .content-image th{
-    color: var(--text-oposite);
+    font-weight: bold;
 }
 .content-image th, td {
-    border: 1px solid var(--text-oposite);
+    border: 1px solid var(--text-main);
     padding: 6px 8px;
 }
 .content-image th {

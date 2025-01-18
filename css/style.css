@@ -7,6 +7,7 @@
 @import 'about.css';
 @import 'projects.css';
 @import 'contact.css';
+@import 'theme-switch.css';
 
 /* GENERAL STYLES */
 
@@ -163,6 +164,7 @@ body {
 }
 .aside .nav ul{
     padding: 0;
+    margin-bottom: 40px;
 }
 .aside .nav ul li{
     padding: 0 16px 8px 16px;
@@ -183,63 +185,6 @@ body {
 }
 .aside .nav ul li i{
     margin-right: 14px;
-}
-
-.theme-switch-container{
-    margin-top: 40px;
-    height: 4em;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.theme-switch-container .theme-switch{
-    background-color: var(--bg-50);
-    width: 5.4em;
-    height: 2.5em;
-    border-radius: 2em;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-.theme-switch-container .theme-switch{
-    color: var(--skin-yellow-100);
-    font-size: 1.2em;
-}
-.theme-switch-container .theme-switch .moon{
-    margin-left: 0.9em;
-}
-.theme-switch-container .theme-switch .sun{
-    margin-right: 0.9em;
-}
-.theme-switch .theme-trigger{
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    height: 3em;
-    width: 3em;
-    border-radius: 50%;
-    border: solid 3px var(--skin-orange-100);
-    background-color: var(--skin-yellow-100);
-    transition: transform 0.3s ease-in;
-}
-.lightmode .theme-switch .theme-trigger {
-    transform: translateX(2.4em);
-}
-.theme-trigger i{
-    color: var(--bg-100);
-    font-size: 1.8em;
-}
-.theme-trigger i:first-child{
-    display: none;
-}
-.lightmode .theme-trigger i:first-child{
-    display: block;
-}
-.lightmode .theme-trigger i:last-child{
-    display: none;
 }
 
 .menu{

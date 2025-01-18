@@ -172,14 +172,16 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    font-weight: bold;
+    color: var(--skin-yellow-50);
 }
 .project-header .link a{
-    color: var(--text-main);
+    color: var(--skin-yellow-50);
     font-size: 16px;
     text-decoration: underline;
 }
 .project-header .link a:hover{
-    color: var(--skin-yellow-50);
+    color: var(--skin-red-50);
 }
 .project-header .link i{
     padding-right: 0.4em;
