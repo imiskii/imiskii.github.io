@@ -1,9 +1,9 @@
 
 
 const projects = {
-    "PHP compiler": {
-        description: "Compiler implementation for imperative language IFJ22 (based on PHP). This is a team project, created in the C programming language. 4 people worked on this project. My work on the project was lexical analysis, symbol table, abstract data structures stack and hash table. The result is a program that receives the code written in IFJ22 at the input and returns compiled intermediate code similar to assembler. During the project, I had the opportunity to enhance my teamwork skills while putting my practical knowledge of the versioning system Git into action. Furthermore, I was able to apply my solid foundation in C programming, which proved beneficial to the success of the project.",
-        link: "https://github.com/imiskii/VUT-FIT-IFJ"
+    "Secure smart contract coding": {
+        description: "Paper about common vulnerabilities in smart contracts and the tools available to improve their security. Smart contracts are a crucial part of decentralized finance (DeFi), but their vulnerabilities can lead to significant financial losses, which makes them unreliable to manage valuable assets. This paper highlights the need to make smart contracts more secure and reliable by providing statistics about crypto crimes, discussing various vulnerabilities, and examining tools to enhance security. By understanding these risks and tools, developers can build safer smart contracts and contribute to a more secure DeFi ecosystem.",
+        link: "https://github.com/imiskii/VUT-FIT/tree/main/SCO%20(Secure%20Coding)"
     },
     "l4-port-scanner": {
         description: "A tool for scanning TCP/UDP ports, inspired by the nmap tool. The program is developed in C/C++ language, utilizing the pcap-library. The result is a program capable of scanning TCP/UDP ports on both IPv4 and IPv6 addresses. The program supports scanning using hostnames and allows specifying specific ports or port ranges. Through this project, I gained knowledge about the functioning of TCP, UDP protocols, as well as IPv4 and IPv6 protocols. Additionally, I acquired experience in object-oriented programming in C++.",
@@ -12,6 +12,18 @@ const projects = {
     "dhcp-stats": {
         description: "The project aimed to create a tool that monitors assigned IPv4 addresses. If allocations surpass 50%, the tool generates a syslog record. The monitoring is based on analyzing captured DHCP packets or a .pcap file with DHCP communication. The entire implementation is in C++. This project gave me a deep understanding of DHCP and provided experience with pcaplib.",
         link: "https://github.com/imiskii/VUT-FIT/tree/main/ISA%20(Network%20Applications%20and%20Network%20Administration)/dhcp-stats-project"
+    },
+    "PHP compiler": {
+        description: "Compiler implementation for imperative language IFJ22 (based on PHP). This is a team project, created in the C programming language. 4 people worked on this project. My work on the project was lexical analysis, symbol table, abstract data structures stack and hash table. The result is a program that receives the code written in IFJ22 at the input and returns compiled intermediate code similar to assembler. During the project, I had the opportunity to enhance my teamwork skills while putting my practical knowledge of the versioning system Git into action. Furthermore, I was able to apply my solid foundation in C programming, which proved beneficial to the success of the project.",
+        link: "https://github.com/imiskii/VUT-FIT-IFJ"
+    },
+    "Vein Enhancement tool": {
+        description: "Finger Print Vein Enhancement tool for Biometric Systems. This project aims to enhance blood vessel structures in image sets using advanced fusion and image processing techniques (fuse multiple images of finger veins to one better image). It integrates preprocessing, fusion, and postprocessing to improve vessel visibility. Implemented Fusion methods are: Wavelet Fusion, Laplacian Pyramid Fusion, PCA Fusion, Exposure Fusion, Pixel Averaging and HDR (High Dynamic Range) which has the best results.",
+        link: "https://github.com/imiskii/BIO-FPVE"
+    },
+    "OpenMP project": {
+        description: "Code vectorization and parallelization with OpenMP. The goal of the project was to vectorize and parallelize C++ code using OpenMP pragmas. This project demonstrates very well the use of vectorization and parallelism in modern processors for programming fast and powerful algorithms.",
+        link: "https://github.com/imiskii/VUT-FIT/tree/main/AVS%20(Computation%20Systems%20Architectures)"
     },
     "IS for event management": {
         description: "This project aimed to develop an information system for managing events. It was a team effort involving three people. My role was to design and implement the user interface and design the database. We used HTML, CSS, JavaScript, and PHP for the implementation. This project gives me valuable experience in developing information systems and web interfaces.",
