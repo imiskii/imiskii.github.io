@@ -50,6 +50,7 @@ body {
     padding-top: 33vh;
     background-color: var(--bg-100);
     z-index: 999;
+    pointer-events: none
 }
 .loaded{
     animation: fadeOut 1s forwards;
