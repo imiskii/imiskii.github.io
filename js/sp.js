@@ -5,6 +5,22 @@ const projects = {
         description: "Paper about common vulnerabilities in smart contracts and the tools available to improve their security. Smart contracts are a crucial part of decentralized finance (DeFi), but their vulnerabilities can lead to significant financial losses, which makes them unreliable to manage valuable assets. This paper highlights the need to make smart contracts more secure and reliable by providing statistics about crypto crimes, discussing various vulnerabilities, and examining tools to enhance security. By understanding these risks and tools, developers can build safer smart contracts and contribute to a more secure DeFi ecosystem.",
         link: "https://github.com/imiskii/VUT-FIT/tree/main/SCO%20(Secure%20Coding)"
     },
+    "Network flow anomaly analysis": {
+        description: "This project involves the analysis and creation of tools for automatic anomaly detection in a dataset containing network flows in the CESNET network. The analysis deals with the identification of different types of anomalies and their possible causes. Anomaly detection involves several approaches whether using Isoletion Forest machine learning and neural networks or various statistical methods.",
+        link: "https://github.com/imiskii/VUT-FIT/tree/main/PDS%20(Data%20Communications%2C%20Computer%20Networks%20and%20Protocols)"
+    },
+    "Project management information system": {
+        description: "This is a larger team project. The task was to create a robust project management system. I personally worked on the frontend part of this project, which was developed in React. This project was mainly beneficial for me in terms of teamwork, working with the github versioning system but also understanding the React library.",
+        link: "https://github.com/AlfredoCode/pis-project"
+    },
+    "Prolog Rubik's Cube solver": {
+        description: "A project focused on logic programming in the Prolog language. The result is a program that can optimally solve a Rubik's cube and provide a sequence of steps to the solution as output.",
+        link: "https://github.com/imiskii/VUT-FIT/tree/main/FLP%20(Functional%20and%20Logic%20Programming)/prolog"
+    },
+    "Haskell Decision tree alg.": {
+        description: "A project focused on functional programming in Haskell. The task was to create a program that can classify data for a given decision tree or create a new decision tree from the provided data.",
+        link: "https://github.com/imiskii/VUT-FIT/tree/main/FLP%20(Functional%20and%20Logic%20Programming)/haskell"
+    },
     "l4-port-scanner": {
         description: "A tool for scanning TCP/UDP ports, inspired by the nmap tool. The program is developed in C/C++ language, utilizing the pcap-library. The result is a program capable of scanning TCP/UDP ports on both IPv4 and IPv6 addresses. The program supports scanning using hostnames and allows specifying specific ports or port ranges. Through this project, I gained knowledge about the functioning of TCP, UDP protocols, as well as IPv4 and IPv6 protocols. Additionally, I acquired experience in object-oriented programming in C++.",
         link: "https://github.com/imiskii/VUT-FIT/tree/main/IPK%20(Computer%20Communications%20and%20Networks)/Project2"
